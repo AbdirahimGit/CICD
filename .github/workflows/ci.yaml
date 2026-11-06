@@ -1,15 +1,41 @@
-name: CoderCo Workflow
+ name: CoderCO combined
 
-on : [push]
+ on: [push]
 
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-    - name: checkout-code
-      uses: actions/checkout@v2
-    - name: "We are testing this workflow"
-      run: echo "Hello Everyone!"
+ jobs:
+    build:
+        runs-on: ubuntu-latest
+
+
+
+        strategy:
+            matrix:
+                python-version: [3.7,3.8,3.9]
+
+        steps:
+        - name: checkout code
+          uses: actions/checkout@v2
+        
+        - name: setup python
+          uses:  actions/setup-python@v2
+          with: 
+            python-version:  
+        
+        - name: install dependencies
+          run: |
+            cd "chapter 4"
+            python3 -m pip3 install --upgrade pip3
+            if [-f requirements.txt]; then pip3 install -r requirements.txt; fi
+        
+        - name: run tests
+          run: |
+            cd "chapter 4"
+            python3 -m unittest discover
+        
+        - name: notify us of success
+          run: echo "Test passed on Python ${{ matrix.python-version}}"
+          if: success()
+         
 
 
 
