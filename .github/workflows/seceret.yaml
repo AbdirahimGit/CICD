@@ -1,17 +1,14 @@
 name: CoderCo Secrets
 
-
 on: [push]
 
 jobs:
-    build:
-        runs-on: ubuntu-latest
+  build:
+    runs-on: ubuntu-latest
 
-        steps:
-        - name: checkout code
-          uses: actions/checkout@v5
+    steps:
+      - name: checkout code
+        uses: actions/checkout@v5
 
-        - name: use a secret
-          run:  echo "The secret is ${{ secrets.MY_SECRET }}"
-           
-
+      - name: use a secret
+        run: echo "The secret is ${{ secrets.MY_SECRET }}"
