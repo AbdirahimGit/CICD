@@ -85,7 +85,7 @@ Hadolint rejected the Dockerfile. The `Build image` step was skipped because the
 
 `FROST` instead of `FROM` on the first line. VS Code underlines it, and Hadolint reported an unexpected `F` on line 1.
 
-![Dockerfile typo](screenshots/testing-docker-linting.png).png)
+![Dockerfile typo](screenshots/testing-docker-linting.png)
 
 ## Problems I hit and how I fixed them
 
