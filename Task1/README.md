@@ -65,7 +65,7 @@ docker run --rm hello-app
 
 The final push run: `lint` and the three matrix test jobs run in parallel, then `docker` runs after they complete.
 
-![All jobs passing](screenshots/pipeline-successful.png.png)
+![All jobs passing](screenshots/pipeline-successful.png)
 
 ### 2. Lint catching real problems
 
