@@ -73,4 +73,4 @@ jobs:
           dockerfile: Task1/dockerfile
 
       - name: Build image
-        run: docker build -t hello-app:${{ github.sha }} chapter-4
+        run: docker build -t hello-app:${{ github.sha }} Task1
