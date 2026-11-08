@@ -77,19 +77,19 @@ An earlier run failed because flake8 found style errors (missing blank lines, wh
 
 The `lint` job after the code was updated to flake8 standard: flake8 installs, runs and exits cleanly.
 
-![Lint success](screenshots/lint-fixed-and-running.png.png)
+![Lint success](screenshots/lint-fixed-and-running.png)
 
 ### 4. Docker lint failing on a broken Dockerfile
 
 Hadolint rejected the Dockerfile. The `Build image` step was skipped because the earlier step failed, so a broken image never gets built.
 
-![Docker lint failure](screenshots/docker-lint-working.png.png)
+![Docker lint failure](screenshots/docker-lint-working.png)
 
 ### 5. The cause: a typo in the Dockerfile
 
 `FROST` instead of `FROM` on the first line. VS Code underlines it, and Hadolint reported an unexpected `F` on line 1.
 
-![Dockerfile typo](screenshots/testing-docker-linting.png.png)
+![Dockerfile typo](screenshots/testing-docker-linting.png)
 
 ### 6. Pull request trigger
 
