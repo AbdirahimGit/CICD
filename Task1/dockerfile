@@ -1,4 +1,4 @@
-FROM python:3.12-slim
+FROST python:3.12-slim
 WORKDIR /app
 COPY helloworld.py .
 CMD ["python", "hello.py"]
